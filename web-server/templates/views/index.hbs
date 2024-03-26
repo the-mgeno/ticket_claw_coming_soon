@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageName }}</title>
+    <link rel="icon" href="/img/Ticketclaw Square Logo.png" alt="ticketclaw.com">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            background-image: url("/img/Alabama Background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="main-content">
+        
+        <h1>
+            <img src="{{{ imagePath }}}" alt="Ticketclaw Logo" style="width: 180px; height: 180px; margin-top:50px">
+        </h1>
+
+        <p style="margin-top:100px; margin-bottom:100px; margin-left:500px; margin-right:500px;background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">
+            Ticket Claw Incorporated is a new company designed to buy and sell tickets for Alabama Football games. Please join our email list!
+        </p>
+
+        <form style="margin-top: 0;margin-left:900px; margin-right:900px" action="/subscribe" method="post">
+            <input placeholder="First Name" type="text" id="firstName" name="firstName" required>
+            <input placeholder="Last Name" type="text" id="lastName" name="lastName" required>
+            <input placeholder="Email" type="email" id="email" name="email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+
+        <script>
+            console.log('Title:', {{ title }});
+        </script>
+
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
