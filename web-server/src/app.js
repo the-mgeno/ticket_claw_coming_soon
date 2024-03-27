@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
@@ -11,7 +13,7 @@ app.use(express.json());
 
 // Mailchimp configuration
 mailchimp.setConfig({
-    apiKey: '4aa5a533cda7b6d18b1f9992accecccf-us22',
+    apiKey: process.env.MAILCHIMP_API_KEY,
     audienceId: '25bccdd97f',
     server: 'us22'
 }) 
