@@ -1,0 +1,130 @@
+body {
+    color: #fffefe;
+    font-family: 'Lato', sans-serif;
+    background-image: url("/img/Coming Soon Page Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    }
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: 26px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.banner-container {
+    position: absolute;
+    top: -170px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner-image {
+    width: 700px;
+    height: auto;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 600px) {
+    .banner-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        text-align: center;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.custom-paragraph-overlay {
+    position: relative;
+    z-index: 1;
+    margin-top: -100px; 
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.custom-paragraph-overlay p {
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: auto;
+}
+
+.subscription-form {
+    margin-top: 450px;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 600px) {
+    .subscription-form {
+        margin-top: 20px;
+    }
+}
+
+.custom-input {
+    border: 2px solid #000000;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+input::-webkit-input-placeholder {
+    color: white;
+}
+
+input:-moz-placeholder {
+    color: white;
+}
+
+input::-moz-placeholder {
+    color: white;
+}
+
+input:-ms-input-placeholder {
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    border: 3px solid #000000;
+    background-color: #1b74c8;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 8px;
+    width: 188px;
+}
