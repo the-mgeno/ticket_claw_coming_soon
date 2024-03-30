@@ -92,9 +92,9 @@ body {
 }
 
 .custom-input {
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     padding: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     text-align: center;
     font-family: 'Lato', sans-serif;
@@ -119,7 +119,7 @@ input:-ms-input-placeholder {
 
 button {
     cursor: pointer;
-    border: 1px solid #000000;
+    border: 3px solid #000000;
     background-color: #1b74c8;
     border-radius: 10px;
     font-family: 'Lato', sans-serif;
