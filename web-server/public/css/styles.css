@@ -35,6 +35,22 @@ body {
     height: auto;
 }
 
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 600px) {
+    .banner-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        text-align: center;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
 .custom-paragraph-overlay {
     position: relative;
     z-index: 1;
@@ -66,6 +82,13 @@ body {
 
 .subscription-form {
     margin-top: 450px;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 600px) {
+    .subscription-form {
+        margin-top: 20px;
+    }
 }
 
 .custom-input {
