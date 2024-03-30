@@ -31,7 +31,7 @@ hbs.registerPartials(partialsPath)
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
-app.get('', ( req, res ) => {
+app.get('/', ( req, res ) => {
     const imagePath = '/img/Banner Logo - Transparent.PNG';
     res.render('index', {
         imagePath: imagePath,
@@ -41,7 +41,7 @@ app.get('', ( req, res ) => {
 });
 
 // Email app
-app.get('', ( req, res ) => {
+app.get('/subscribe', ( req, res ) => {
     res.render('subscribe', {
         errorMessage: null,
         subscribeMessage: null,
