@@ -4,15 +4,8 @@
     <title>Subscribe</title>
     <link rel="icon" href="/img/Ticketclaw Square Logo.png">
     <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="/js/app.js"></script>
-    <style>
-        body {
-            background-image: url("/img/Alabama Background.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    </style>
 </head>
 
 <body>
@@ -21,7 +14,7 @@
         {{#if errorMessage}}      
         <p>{{errorMessage}}</p>
         {{else}}
-        <p style="background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">{{subscribeMessage}}</p>
+        <p>{{subscribeMessage}}</p>
         {{/if}}
     </div>
 

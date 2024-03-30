@@ -1,6 +1,6 @@
-require('dotenv').config();
-
 const path = require('path')
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
+
 const express = require('express')
 const hbs = require('hbs')
 const mailchimp = require('@mailchimp/mailchimp_marketing')
@@ -16,7 +16,7 @@ mailchimp.setConfig({
     apiKey: process.env.MAILCHIMP_API_KEY,
     audienceId: '25bccdd97f',
     server: 'us22'
-}) 
+})
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -32,7 +32,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 app.get('', ( req, res ) => {
-    const imagePath = '/img/Ticketclaw Square Logo.PNG';
+    const imagePath = '/img/Banner Logo - Transparent.PNG';
     res.render('index', {
         imagePath: imagePath,
         name: 'Matthew Geno',

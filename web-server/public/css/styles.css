@@ -1,59 +1,107 @@
 body {
-    color: #000000 ;
-    font-family: arial;
-    max-width: 650px;
-    margin: 0 auto;
+    color: #fffefe;
+    font-family: 'Lato', sans-serif;
+    background-image: url("/img/Coming Soon Page Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
     padding: 0 16px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    }
+
+.main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-}
-
-.main-content {
-    flex-grow: 1;
+    font-size: 26px;
+    margin: 0 auto;
     text-align: center;
-    font-size: 18px;
-}
-footer {
-    color: #000000;
-    border-top: 1px solid #eeeeee;
-    margin-top: 18px;
-    padding: 16px 0;
-}
-header {
-    margin-top: 16px;
-    margin-bottom: 48px;
 }
 
-h1 {
-    font-size: 64px;
-    margin-bottom: 16px;
+.banner-container {
+    position: absolute;
+    top: -170px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-header a {
-    color: #000000;
-    margin-right: 16px;
-    text-decoration: none;
+.banner-image {
+    width: 700px;
+    height: auto;
+}
+
+.custom-paragraph-overlay {
+    position: relative;
+    z-index: 1;
+    margin-top: -100px; 
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.custom-paragraph-overlay p {
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: auto;
+}
+
+.subscription-form {
+    margin-top: 450px;
+}
+
+.custom-input {
+    border: 1px solid #000000;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
     font-size: 16px;
 }
 
-.portrait {
-    width: 100px;
-    margin-top: 500px;
+input::-webkit-input-placeholder {
+    color: white;
 }
 
-input {
-    border: 1px solid #cccccc;
-    padding: 8px;
+input:-moz-placeholder {
+    color: white;
+}
+
+input::-moz-placeholder {
+    color: white;
+}
+
+input:-ms-input-placeholder {
+    color: white;
 }
 
 button {
     cursor: pointer;
-    border: 1px solid #ffffff;
-    background: #ffffff;
-    color: #888888;
+    border: 1px solid #000000;
+    background-color: #1b74c8;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
     padding: 8px;
     width: 188px;
 }
