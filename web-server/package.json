@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "build": "mkdir -p dist && cp -r public/* dist/ && cp -r templates/* dist/ && echo 'Build complete'"
   },
   "keywords": [],
   "author": "",
