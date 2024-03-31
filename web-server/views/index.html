@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ pageName }}</title>
+    <title>Tickeclaw</title>
     <link rel="icon" href="/img/Ticketclaw Square Logo.png" alt="ticketclaw.com">
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -10,7 +10,7 @@
 <body>
     <div class="main-content">
         <div class="banner-container">
-            <img src="{{{ imagePath }}}" alt="Ticketclaw Banner" class="banner-image">
+            <img src="/img/Banner Logo - Transparent.png" alt="Ticketclaw Banner" class="banner-image">
             <div class="custom-paragraph-overlay">
                 <p>Coming August 2024
                 </p>
@@ -36,7 +36,8 @@
         </form>
     </div>
     <script>
-        console.log('Title:', {{ title }});
+        var title = document.title;
+        console.log('Title:', title );
     </script>
 
     <script src="/js/app.js"></script>

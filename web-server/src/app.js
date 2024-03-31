@@ -2,7 +2,6 @@ const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
 const express = require('express')
-const hbs = require('hbs')
 const mailchimp = require('@mailchimp/mailchimp_marketing')
 
 const app = express()
@@ -19,33 +18,28 @@ mailchimp.setConfig({
 })
 
 // Define paths for Express config
-const publicDirectoryPath = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, '../templates/views')
-const partialsPath = path.join(__dirname, '../templates/partials')
+const viewsPath = path.join(__dirname, '../views');
+const publicPath = path.join(__dirname, '../public');
 
-// Setup handlebars engine and views location
-app.set('view engine', 'hbs')
-app.set('views', viewsPath)
-hbs.registerPartials(partialsPath)
+// Setup views directory to serve HTML files
+app.use(express.static(viewsPath));
 
-// Setup static directory to serve
-app.use(express.static(publicDirectoryPath))
+// Setup public directory to serve static assets
+app.use(express.static(publicPath));
 
-app.get('/', ( req, res ) => {
-    const imagePath = '/img/Banner Logo - Transparent.PNG';
-    res.render('index', {
-        imagePath: imagePath,
-        name: 'Matthew Geno',
-        pageName: 'Ticket Claw',
-    });
+// Serve HTML files directly from the views directory
+app.get('/', (req, res) => {
+    res.sendFile(path.join(viewsPath, 'index.html'));
 });
 
-// Email app
-app.get('/subscribe', ( req, res ) => {
-    res.render('subscribe', {
-        errorMessage: null,
-        subscribeMessage: null,
-    });
+// Serve HTML files for other routes
+app.get('/subscribe', (req, res) => {
+    res.sendFile(path.join(viewsPath, 'subscribe.html'));
+});
+
+app.get('/img/:imageName', (req, res) => {
+    const imageName = req.params.imageName;
+    res.sendFile(path.join(publicPath, 'img', imageName));
 });
 
 app.post('/subscribe', async (req, res) => {
@@ -63,20 +57,15 @@ app.post('/subscribe', async (req, res) => {
       
         console.log('Successfully subscribed:', response);
 
-        res.render('subscribe', {
-            errorMessage: null,
-            subscribeMessage: 'Successfully subscribed to the newsletter!',
-        });
+        res.sendFile(path.join(viewsPath, 'subscribe.html'));
       
     } catch (error) {
         console.error('Subscription failed:', error);
       
-        res.render('subscribe', {
-            errorMessage: 'Subscription failed. Please try again later.',
-            subscribeMessage: null,
-        });
+        res.sendFile(path.join(viewsPath, 'subscribe.html'));
+        }
     }
-});
+);
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
