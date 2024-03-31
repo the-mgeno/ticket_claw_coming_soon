@@ -3,7 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install --cache .npm --prefer-offline
+        - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash  # Install NVM
+        - export NVM_DIR="$HOME/.nvm"
+        - source "$NVM_DIR/nvm.sh"
+        - nvm install node  # Install Node.js using NVM
+        - npm install --cache .npm --prefer-offline  # Install dependencies using npm
     # IMPORTANT - Please verify your build commands
     build:
       commands:[]
