@@ -18,8 +18,8 @@ mailchimp.setConfig({
 })
 
 // Define paths for Express config
-const viewsPath = path.join(__dirname, '../views');
-const publicPath = path.join(__dirname, '../public');
+const viewsPath = path.join(__dirname, 'views');
+const publicPath = path.join(__dirname, 'public');
 
 // Setup views directory to serve HTML files
 app.use(express.static(viewsPath));
