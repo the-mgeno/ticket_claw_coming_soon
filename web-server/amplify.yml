@@ -3,8 +3,12 @@ frontend:
   phases:
     preBuild:
       commands:
-        - apt-get update
-        - apt-get install -y nodejs npm
+        # Install Node.js and npm
+        - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+        - export NVM_DIR="$HOME/.nvm"
+        - source "$NVM_DIR/nvm.sh"
+        - nvm install node
+        # Install dependencies using npm
         - npm install --cache .npm --prefer-offline
     build:
       commands: []
@@ -15,3 +19,4 @@ frontend:
   cache:
     paths:
       - .npm/**/*
+      - .yarn/**/*
