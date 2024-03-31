@@ -25,7 +25,7 @@ body {
 
 .banner-container {
     position: absolute;
-    top: -170px;
+    top: -200px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -81,7 +81,7 @@ body {
 }
 
 .subscription-form {
-    margin-top: 450px;
+    margin-top: 600px;
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */

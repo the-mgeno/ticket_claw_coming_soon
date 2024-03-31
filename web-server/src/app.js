@@ -43,16 +43,12 @@ app.get('/img/:imageName', (req, res) => {
 });
 
 app.post('/subscribe', async (req, res) => {
-    const { firstName, lastName, email } = req.body;
+    const { email } = req.body;
       
     try {
         const response = await mailchimp.lists.addListMember('25bccdd97f', {
             email_address: email,
             status: 'subscribed',
-            merge_fields: {
-                FNAME: firstName,
-                LNAME: lastName,
-            },
         });
       
         console.log('Successfully subscribed:', response);
