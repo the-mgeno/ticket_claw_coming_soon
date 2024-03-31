@@ -9,7 +9,9 @@ frontend:
         - source "$NVM_DIR/nvm.sh"
         - nvm install node
         # Install dependencies using npm
-        - npm install --cache .npm --prefer-offline
+        - npm install --cache $HOME/.npm --prefer-offline
+        # Install dependencies using Yarn
+        - yarn install --cache-folder $HOME/.yarn-cache --prefer-offline
     build:
       commands: []
   artifacts:
@@ -20,3 +22,8 @@ frontend:
     paths:
       - .npm/**/*
       - .yarn/**/*
+      - $HOME/.npm
+      - $HOME/.yarn-cache
+      - C:\Users\matem\AppData\Local\Yarn\Cache\v6
+
+
