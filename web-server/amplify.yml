@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci --cache .npm --prefer-offline
+        - npm install --cache .npm --prefer-offline
     # IMPORTANT - Please verify your build commands
     build:
       commands:
