@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - apt-get update
+        - apt-get install -y nodejs npm
+        - npm install --cache .npm --prefer-offline
+    build:
+      commands: []
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .npm/**/*
