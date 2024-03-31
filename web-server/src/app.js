@@ -33,13 +33,13 @@ app.get('/', (req, res) => {
 });
 
 // Serve HTML files for other routes
-app.get('/subscribe', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'subscribe.html'));
-});
-
 app.get('/img/:imageName', (req, res) => {
     const imageName = req.params.imageName;
     res.sendFile(path.join(publicPath, 'img', imageName));
+});
+
+app.get('/subscribe', (req, res) => {
+    res.sendFile(path.join(viewsPath, 'subscribe.html'));
 });
 
 app.post('/subscribe', async (req, res) => {
@@ -53,15 +53,13 @@ app.post('/subscribe', async (req, res) => {
       
         console.log('Successfully subscribed:', response);
 
-        res.sendFile(path.join(viewsPath, 'subscribe.html'));
-      
+        res.redirect('/subscribe?status=success');
     } catch (error) {
         console.error('Subscription failed:', error);
       
-        res.sendFile(path.join(viewsPath, 'subscribe.html'));
-        }
+        res.redirect('/subscribe?status=error&message=' + encodeURIComponent(error.message));
     }
-);
+});
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
