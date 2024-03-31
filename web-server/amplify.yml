@@ -3,17 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        # Install Node.js and npm
-        - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-        - export NVM_DIR="$HOME/.nvm"
-        - source "$NVM_DIR/nvm.sh"
-        - nvm install node
-        # Install dependencies using npm
-        - npm install --cache $HOME/.npm --prefer-offline
-        # Install dependencies using Yarn
-        - yarn install --cache-folder $HOME/.yarn-cache --prefer-offline
+        - npm install --cache .npm --prefer-offline
+    # IMPORTANT - Please verify your build commands
     build:
-      commands: []
+      commands:[]
   artifacts:
     baseDirectory: dist
     files:
@@ -21,9 +14,5 @@ frontend:
   cache:
     paths:
       - .npm/**/*
-      - .yarn/**/*
-      - $HOME/.npm
-      - $HOME/.yarn-cache
-      - C:\Users\matem\AppData\Local\Yarn\Cache\v6
 
 
